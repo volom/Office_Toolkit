@@ -13,4 +13,5 @@ excel.Application.DisplayAlerts = False
 
 def xlsb2xlsx(file):
     wb = excel.Workbooks.Open(file, Local=False)
-    wb.SaveAs(file[:-5], FileFormat=win32com.constants.xlOpenXMLWorkbook)
+    wb.SaveAs(f"{file[:-5]}.xlsx", FileFormat=win32com.constants.xlOpenXMLWorkbook)
+    wb.Close()
